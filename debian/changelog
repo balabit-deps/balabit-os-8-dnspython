@@ -1,3 +1,10 @@
+dnspython (1.16.0-1ubuntu1) focal; urgency=medium
+
+  * Fix dns.query.xfr(lifetime=None, timeout=not None) (LP: #1941988)
+    - d/p/lp1941988-When-doing-xfr-do-not-compare-with-expiration.patch
+
+ -- Brett Milford <brett.milford@canonical.com>  Thu, 30 Jun 2022 08:40:05 +0000
+
 dnspython (1.16.0-1build1) focal; urgency=medium
 
   * No-change rebuild to generate dependencies on python2.

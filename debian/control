@@ -1,7 +1,8 @@
 Source: dnspython
 Section: python
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Robert S. Edmonds <edmonds@debian.org>, Scott Kitterman <scott@kitterman.com>, Matthew Grant <matthewgrant5@gmail.com>
 Build-Depends: debhelper (>= 9~), python-all (>= 2.6.6-3~), python-setuptools, python3-all (>= 3.3), python3-setuptools, dh-python, netbase
 Homepage: http://www.dnspython.org

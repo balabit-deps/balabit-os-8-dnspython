@@ -1,0 +1,26 @@
+Origin: upstream, https://github.com/rthalley/dnspython/commit/9fbf9b223dc26262b1cf23f623f89283ee9c8375
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1941988
+From 9fbf9b223dc26262b1cf23f623f89283ee9c8375 Mon Sep 17 00:00:00 2001
+From: Bob Halley <halley@dnspython.org>
+Date: Sun, 29 Sep 2019 13:39:41 -0700
+Subject: [PATCH] When doing xfr, do not compare with expiration if it is None.
+ [Issue #390]
+
+---
+ dns/query.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Index: dnspython-1.16.0/dns/query.py
+===================================================================
+--- dnspython-1.16.0.orig/dns/query.py
++++ dnspython-1.16.0/dns/query.py
+@@ -608,7 +608,8 @@ def xfr(where, zone, rdtype=dns.rdatatyp
+     first = True
+     while not done:
+         mexpiration = _compute_expiration(timeout)
+-        if mexpiration is None or mexpiration > expiration:
++        if mexpiration is None or \
++           (expiration is not None and mexpiration > expiration):
+             mexpiration = expiration
+         if use_udp:
+             _wait_for_readable(s, expiration)
